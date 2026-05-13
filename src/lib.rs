@@ -3,6 +3,10 @@
 //! The REPL spine: read a line, echo it back, loop until EOF. Parsing,
 //! built-ins, and signal handling land in later milestone issues.
 
+mod token;
+
+pub use token::{Token, TokenError, tokenize};
+
 use std::io::{self, BufRead, Write};
 
 /// Run the shell. Handles `--version` / `-V` and otherwise enters the REPL.
