@@ -3,8 +3,10 @@
 //! The REPL spine: read a line, echo it back, loop until EOF. Parsing,
 //! built-ins, and signal handling land in later milestone issues.
 
+mod parser;
 mod token;
 
+pub use parser::{AndOr, ParseError, Pipeline, Redirect, RedirectKind, SimpleCommand, parse};
 pub use token::{Token, TokenError, tokenize};
 
 use std::io::{self, BufRead, Write};
